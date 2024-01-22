@@ -5,10 +5,17 @@ const app = createApp({
     name: 'Vue Slider',
     data() {
         return {
+
+            // Array preso da data.js
             destinations,
-            currentIndex: 0
+            // Indica l'indice della pagina attiva
+            currentIndex: 0,
+            // Variabile che contiene l'autoplay
+            autoplay: null
         }
     },
+
+    // Variabili composte ricavate dai data
     computed: {
         isLastIndex() {
             return this.currentIndex === this.destinations.length - 1;
@@ -20,6 +27,10 @@ const app = createApp({
             return this.destinations.length - 1;
         }
     },
+    mounted() {
+        this.startAutoplay()
+    },
+    // Funzioni
     methods: {
         setCurrentIndex(location) {
             if (location === 'prev') {
@@ -33,6 +44,14 @@ const app = createApp({
             else {
                 this.currentIndex = location;
             }
+        },
+        startAutoplay() {
+            this.autoplay = setInterval(() => {
+                this.setCurrentIndex('next');
+            }, 1000)
+        },
+        stopaAutoplay() {
+            clearInterval(this.autoplay);
         }
     }
 });
