@@ -27,11 +27,17 @@ const app = createApp({
             return this.destinations.length - 1;
         }
     },
+    // Dopo che l'app viene montata, lancia l'autoplay
     mounted() {
         this.startAutoplay()
     },
     // Funzioni
     methods: {
+
+        /**
+         * set a new current index value depending on the destination
+         * @param {*} location it specifics the destination of the new current index: next element, previous element, another specific element 
+         */
         setCurrentIndex(location) {
             if (location === 'prev') {
                 if (this.isFirstIndex) this.currentIndex = this.lastIndex;
@@ -45,12 +51,18 @@ const app = createApp({
                 this.currentIndex = location;
             }
         },
+        /**
+         * It makes the gallery's autoplay to start
+         */
         startAutoplay() {
             this.autoplay = setInterval(() => {
                 this.setCurrentIndex('next');
-            }, 1000)
+            }, 2000)
         },
-        stopaAutoplay() {
+        /**
+         * It stops the gallery's autoplay
+         */
+        stopAutoplay() {
             clearInterval(this.autoplay);
         }
     }
