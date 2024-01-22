@@ -5,7 +5,8 @@ const app = createApp({
     name: 'Vue Slider',
     data() {
         return {
-            destinations
+            destinations,
+            currentIndex: 0
         }
     }
 });
