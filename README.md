@@ -14,5 +14,8 @@
 
 ### Scaletta:
 1. Settaggio VUE
-2. riscrivere il markup tramite VUE per ricreare la pagina (statica)
-3. 
+2. Riscrivere il markup tramite VUE per ricreare la pagina (statica)
+3. Implementare funzionalità dei prev e next button
+    - Creare delle funzioni per incrementare e diminuire il current index al click dei button
+4. Implementare una risposta della pagina al click sulle thumbnails
+5. Implementare autoplay

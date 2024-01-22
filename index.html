@@ -34,7 +34,8 @@
   <div class="container" id="root">
     <div id="carousel">
       <!-- Prev button -->
-      <i id="prev-button" class="bi bi-arrow-left-circle-fill" role="button"></i>
+      <i v-if="currentIndex" @click="currentIndex--" id="prev-button" class="bi bi-arrow-left-circle-fill"
+        role="button"></i>
 
       <!-- Gallery -->
       <div class="gallery">
@@ -48,7 +49,8 @@
       </div>
 
       <!-- next button -->
-      <i id="next-button" class="bi bi-arrow-right-circle-fill" role="button"></i>
+      <i v-if="currentIndex<destinations.length-1" @click="currentIndex++" id="next-button"
+        class="bi bi-arrow-right-circle-fill" role="button"></i>
     </div>
 
     <!-- Thumbnails -->
