@@ -17,5 +17,9 @@
 2. Riscrivere il markup tramite VUE per ricreare la pagina (statica)
 3. Implementare funzionalità dei prev e next button
     - Creare delle funzioni per incrementare e diminuire il current index al click dei button
+    - Gestire comportamento dei button agli estremi della gallery
+        1. Prima opzione: faccio scomparire e riapparire i button
+        2. Seconda opzione: il current index riparte dall'estremo opposto della gallery
+
 4. Implementare una risposta della pagina al click sulle thumbnails
 5. Implementare autoplay

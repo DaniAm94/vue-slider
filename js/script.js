@@ -8,6 +8,14 @@ const app = createApp({
             destinations,
             currentIndex: 0
         }
+    },
+    computed: {
+        isLastIndex() {
+            return this.currentIndex === this.destinations.length - 1;
+        },
+        isFirstIndex() {
+            return this.currentIndex === 0;
+        }
     }
 });
 
